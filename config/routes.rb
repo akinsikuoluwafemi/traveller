@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
-  get 'site/home'
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+  delete "/logout", to: "sessions#destroy"
+
+
+  get "site/home"
 
   resources :posts
   resources :users
